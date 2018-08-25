@@ -1,0 +1,71 @@
+<% layout('layout') %>
+
+
+    <div class="container">
+        <br>
+        <br>
+        <div class="text-center reg_msg">
+            <h1>
+                <a href="/">RateMe</a>
+            </h1>
+        </div>
+        <br>
+        <br>
+
+
+
+
+        <div class="text-center reg_msg">
+            <h2 class="fancy">
+                <span>LOG IN</span>
+            </h2>
+        </div>
+        <br>
+
+        <div class="row signup">
+            <% if(hasErrors){ %>
+                <% for(var i =0;i<errors.length;i++){ %>
+                    <div class="alert alert-danger">
+                        <a href="#" class="close" data-dismiss="alert" aria-lable="close">
+                            X
+                        </a>
+                        <%= errors[i]%>
+
+                    </div>
+                    <% }%>
+
+                        <%}%>
+
+
+                            <form method="POST" action="/login">
+
+
+
+                                <div class="form-group input_group">
+                                    <input id="email" class="form-control" name="email" type="text" autocomplete="on" placeholder="EMAIL" style="margin-bottom:20px;">
+                                </div>
+
+                                <div class="form-group input_group">
+                                    <input id="password" class="form-control" name="password" type="password" placeholder="PASSWORD" style="margin-bottom:20px;">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <input type="submit" id="login" value="LOG IN" class="form-control btn btn-primary" name="login" style="">
+                                </div>
+
+                            </form>
+
+                            <div>
+                                <h4 class="pull-left">Already have an account?
+                                    <a href="/signup">Sign Up</a>
+                                </h4>
+                                <h4 class="pull-right">
+                                    <a href="/forgot">Forgot Your Password?</a>
+
+                                </h4>
+                            </div>
+
+
+        </div>
+    </div>
