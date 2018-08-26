@@ -14,6 +14,7 @@ var app = express()
 mongoose.connect('mongodb://localhost/farmingApp')
 
 require('./config/passport');
+require('./secret/secret')
 app.use(express.static('public'))
 app.engine('ejs', engine)
 app.set('view engine', 'ejs')
